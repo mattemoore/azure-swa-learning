@@ -8,7 +8,7 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<Row>
 		<Col>
-			<Button color="primary" outline>Hello World!!!!</Button>
+			<Button color="primary" outline>Hello World!!!!aaaaaaaaa</Button>
 		</Col>
 	</Row>
 </main>
