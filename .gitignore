@@ -1,5 +1,5 @@
 # Build output
-public/build
+/public/build
 
 # Logs
 logs
