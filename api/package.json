@@ -4,7 +4,6 @@
   "description": "",
   "scripts": {
     "start": "func extensions install --package Microsoft.Azure.WebJobs.Extensions.Storage --version 4.0.2 && func start --verbose",
-    "start:dev": "npm install && npm start",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {},
