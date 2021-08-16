@@ -1,6 +1,9 @@
 # Build output
 /public/build
 
+# Dev data in DB
+/dev_data
+
 # Logs
 logs
 *.log
