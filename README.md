@@ -1,4 +1,4 @@
-# ece-connect-
+# ece-connect-client
 
 ## Dev
 
@@ -8,6 +8,7 @@
 1. Start Azure Static Web App emulatorn (in another terminal): `npm run azure:emu`
 1. Hit webapp at `http://localhost:4280/`
 1. Hit api at `http://localhost:4280/api/HelloWorld`
+1. Reset db via deleting Docker volume as specified in `db/start_dev.sh`
 
 ## Deployment
 
