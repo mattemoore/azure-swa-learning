@@ -10,13 +10,12 @@ module.exports = async function (context, req) {
         password: process.env.PGPASSWORD,
     };
 
-    // TODO: Change from bool in string to 0 and 1
-    if (process.env.PGSSL == 'true') {
+    if (process.env.PGSSL === '1') {
         connConfig.ssl = {
             rejectUnauthorized : false,
-            ca   : fs.readFileSync("DigiCertGlobalRootCA.crt.pem").toString(),
-            key  : fs.readFileSync("DigiCertGlobalRootCA.crt.pem").toString(),
-            cert : fs.readFileSync("DigiCertGlobalRootCA.crt.pem").toString(),
+            ca   : fs.readFileSync(process.env.PGSSLKEY).toString(),
+            key  : fs.readFileSync(process.env.PGSSLKEY).toString(),
+            cert : fs.readFileSync(process.env.PGSSLKEY).toString(),
         }
     }
     const client = new Client(connConfig);

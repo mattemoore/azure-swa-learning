@@ -24,16 +24,17 @@ Azure Static Web App + local dev config flow
 ## Migrations
 
 ## Settings
-1. Values in `local.settings.json` must be manually entered into Azure Static Web App configuration
 
+1. Values in `local.settings.json` must be pushed or manually entered into Azure Static Web App configuration
 
 ## TODO
 
-1. Setup env vars of live db creds sent into prod/staging Funcions + deal with 
-1. setup migrations to run locally and when deployed
-1. Validate data in live database is being rendered (start live db)
+1. Complete setup of live functions using ssl connections with live db instance
+1. Setup migrations to run locally in dev
+1. Setup migrations to run when pushed to prod and staging
 
-1. application config -> 
-1. application settings
+1. Application config
+1. Application settings
 1. Authentication
-1. Authorization of 
+1. Authorization
+1. Linting
