@@ -23,10 +23,12 @@ Azure Static Web App + local dev config flow
 
 ## Migrations
 
+## Settings
+1. Values in `local.settings.json` must be manually entered into Azure Static Web App configuration
+
 
 ## TODO
 
-1. Modify HelloWorld function to call into database
 1. Setup env vars of live db creds sent into prod/staging Funcions + deal with 
 1. setup migrations to run locally and when deployed
 1. Validate data in live database is being rendered (start live db)
