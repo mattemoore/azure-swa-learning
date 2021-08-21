@@ -9,14 +9,8 @@ module.exports = async function (context, req) {
         user: process.env.PGUSER,
         password: process.env.PGPASSWORD,
     };
-
     if (process.env.PGSSL === '1') {
-        connConfig.ssl = {
-            rejectUnauthorized : false,
-            ca   : process.env.PGSSLKEY,
-            key  : process.env.PGSSLKEY,
-            cert : process.env.PGSSLKEY,
-        }
+        connConfig.ssl = true;
     }
     const client = new Client(connConfig);
     await client.connect();
