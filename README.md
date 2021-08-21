@@ -10,7 +10,7 @@ Azure Static Web App + local dev config flow
 1. Start Azure Static Web App emulator (in another terminal): `npm run azure:emu`
 1. Hit webapp at `http://localhost:4280/`
 1. Hit api at `http://localhost:4280/api/`
-1. Reset db via deleting Docker volume as specified in `db/start_dev.sh`
+1. Reset db (data and password) via deleting Docker volume as specified in `db/start_dev.sh`
 
 ## Deployment
 
@@ -20,14 +20,12 @@ Azure Static Web App + local dev config flow
 ## API
 
 1. Add API method using Azure Static Web Apps Extension --> Create Function
-1. 
 
 ## Migrations
 
 
 ## TODO
 
-1. Setup `localsettings.json` to have env vars of local db creds passed into local Functions
 1. Modify HelloWorld function to call into database
 1. Setup env vars of live db creds sent into prod/staging Funcions + deal with 
 1. setup migrations to run locally and when deployed
