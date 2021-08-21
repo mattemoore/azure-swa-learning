@@ -13,9 +13,9 @@ module.exports = async function (context, req) {
     if (process.env.PGSSL === '1') {
         connConfig.ssl = {
             rejectUnauthorized : false,
-            ca   : fs.readFileSync(process.env.PGSSLKEY).toString(),
-            key  : fs.readFileSync(process.env.PGSSLKEY).toString(),
-            cert : fs.readFileSync(process.env.PGSSLKEY).toString(),
+            ca   : process.env.PGSSLKEY,
+            key  : process.env.PGSSLKEY,
+            cert : process.env.PGSSLKEY,
         }
     }
     const client = new Client(connConfig);
