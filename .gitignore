@@ -1,3 +1,9 @@
+# Certs
+*.pem
+
+# Local settings 
+local.settings.json
+
 # Build output
 /public/build
 

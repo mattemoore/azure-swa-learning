@@ -16,6 +16,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve --content-base public",
+    "db": "./db/start_local_dev.sh",
     "api": "cd api && npm run start",
     "azure:emu": "npx @azure/static-web-apps-cli start http://localhost:8080 --api http://localhost:7071"
   },
