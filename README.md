@@ -38,3 +38,7 @@ Azure Static Web App + local dev config flow
 1. Authentication
 1. Authorization
 1. Linting
+
+## LONG TERM TODO
+
+1. Move from Managed Functions to BYOFunctions so that we can limit IP address range in firewall to Database
