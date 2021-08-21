@@ -9,8 +9,10 @@ module.exports = async function (context, req) {
         user: process.env.PGUSER,
         password: process.env.PGPASSWORD,
     };
+
+    // TODO: Change from bool in string to 0 and 1
     if (process.env.PGSSL == 'true') {
-        connConig.ssl = {
+        connConfig.ssl = {
             rejectUnauthorized : false,
             ca   : fs.readFileSync("DigiCertGlobalRootCA.crt.pem").toString(),
             key  : fs.readFileSync("DigiCertGlobalRootCA.crt.pem").toString(),
