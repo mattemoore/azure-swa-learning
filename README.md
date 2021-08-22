@@ -42,3 +42,4 @@ Azure Static Web App + local dev config flow
 ## LONG TERM TODO
 
 1. Move from Managed Functions to BYOFunctions so that we can limit IP address range in firewall to Database
+1. Lockdown PG (Separate db owner doing migrations and db user used by API to query db)
