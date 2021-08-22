@@ -28,7 +28,7 @@ jobs:
           # The password to use to connect to the database
           password: ${{ secrets.PGPASSWORD }}
           # Comma-separated list of locations to scan recursively for migrations
-          locations: filesystem:./db/migraions
+          locations: filesystem:./db/migrations
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
