@@ -4,7 +4,10 @@ VOLUME_NAME="db-volume"
 
 docker volume create $VOLUME_NAME ; docker kill $CONTAINER_NAME ; docker rm $CONTAINER_NAME ;
 docker run --name $CONTAINER_NAME --network host -p 5432:5432 -e POSTGRES_PASSWORD="IrreleventDueToHostTrust" \
-    -v $VOLUME_NAME:/var/lib/postgresql/data:rw -d postgres:11 
+    -v $VOLUME_NAME:/var/lib/postgresql/data:rw -d postgres:11
+docker run --rm --network host -v $(pwd)/db/migrations:/var/migrations flyway/flyway \
+    -url=jdbc:postgresql://localhost:5432/postgres \
+    -user=postgres -locations=filesystem:/var/migrations migrate
 docker logs -f $CONTAINER_NAME
 
 # Shell into db container:

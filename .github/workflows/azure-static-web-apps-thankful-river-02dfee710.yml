@@ -18,6 +18,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - name: Flyway Migration
+        uses: joshuaavalon/flyway-action@v1
+        with:
+          # The jdbc url to use to connect to the database
+          url: jdbc:postgresql://ece-connect-db.postgres.database.azure.com:5432/postgres
+          # The user to use to connect to the database
+          user:  ${{ secrets.PGUSERNAME }}
+          # The password to use to connect to the database
+          password: ${{ secrets.PGPASSWORD }}
+          # Comma-separated list of locations to scan recursively for migrations
+          locations: filesystem:./db/migrations
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1

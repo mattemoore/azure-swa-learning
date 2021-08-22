@@ -23,15 +23,15 @@ Azure Static Web App + local dev config flow
 
 ## Migrations
 
+1. Create new flyway migration file in /db/migrations
+1. Local dev migrations are done during `npm run db`
+1. Live dev migrations are done during deploy in `/home/mattmoore/Code/ece-connect-client/.github/workflows/azure-static-web-apps-thankful-river-02dfee710.yml`
+
 ## Settings
 
 1. Values in `local.settings.json` must be pushed or manually entered into Azure Static Web App configuration
 
 ## TODO
-
-1. Complete setup of live functions using ssl connections with live db instance
-1. Setup migrations to run locally in dev
-1. Setup migrations to run when pushed to prod and staging
 
 1. Application config
 1. Application settings
@@ -39,6 +39,9 @@ Azure Static Web App + local dev config flow
 1. Authorization
 1. Linting
 
-## LONG TERM TODO
+## TODO LONG TERM
 
 1. Move from Managed Functions to BYOFunctions so that we can limit IP address range in firewall to Database
+1. Lockdown PG (Separate db owner doing migrations and db user used by API to query db)
+1. Move dupe dbuser and dbpassword in github actions...it's in ASWA config as well...maybe this is ok?
+1. Enable support for staging database
