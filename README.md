@@ -33,6 +33,8 @@ Azure Static Web App + local dev config flow
 
 ## TODO
 
+1. Enable support for staging database (test PR migrations go to staging and merged go to live)...
+1. Backup database before applying migrations
 1. Application config
 1. Application settings
 1. Authentication
@@ -43,5 +45,4 @@ Azure Static Web App + local dev config flow
 
 1. Move from Managed Functions to BYOFunctions so that we can limit IP address range in firewall to Database
 1. Lockdown PG (Separate db owner doing migrations and db user used by API to query db)
-1. Move dupe dbuser and dbpassword in github actions...it's in ASWA config as well...maybe this is ok?
-1. Enable support for staging database
+1. Move dupe dbuser and dbpassword in github actions...it's in ASWA config as well...maybe this is ok?  Or move all secrets to Azure Vault?
