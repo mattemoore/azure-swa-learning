@@ -1,1 +1,2 @@
-CREATE DATABASE ECECONNECT ENCODING 'UTF8';
+-- CREATE DATABASE ececonnect ENCODING 'UTF8';
+-- Create db manually using SQL above before running migrations

@@ -1,0 +1,5 @@
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   ADDRESS        CHAR(50)
+);

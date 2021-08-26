@@ -14,7 +14,10 @@ module.exports = async function (context, req) {
     }
     const client = new Client(connConfig);
     await client.connect();
-    const res = await client.query('SELECT NOW()')
+    const res = await client.query(`SELECT *
+        FROM pg_catalog.pg_tables
+        WHERE schemaname != 'pg_catalog' AND 
+            schemaname != 'information_schema';`)
     await client.end()
     context.res = {
         // status: 200, /* Defaults to 200 */
