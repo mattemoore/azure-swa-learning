@@ -22,7 +22,7 @@ jobs:
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: joshuaavalon/flyway-action@v1
         with:
-          url: jdbc:postgresql://ece-connect-db.postgres.database.azure.com:5432/ECECONNECT
+          url: jdbc:postgresql://ece-connect-db.postgres.database.azure.com:5432/ececonnect
           user:  ${{ secrets.PGUSERNAME }}
           password: ${{ secrets.PGPASSWORD }}
           locations: filesystem:./db/migrations
@@ -30,7 +30,7 @@ jobs:
         if: ${{ github.ref != 'refs/heads/main' }}
         uses: joshuaavalon/flyway-action@v1
         with:
-          url: jdbc:postgresql://ece-connect-db-staging.postgres.database.azure.com:5432/ECECONNECT
+          url: jdbc:postgresql://ece-connect-db-staging.postgres.database.azure.com:5432/ececonnect
           user:  ${{ secrets.PGUSERNAMESTAGING }}
           password: ${{ secrets.PGPASSWORDSTAGING }}
           locations: filesystem:./db/migrations

@@ -33,7 +33,6 @@ Azure Static Web App + local dev config flow
 
 ## TODO
 
-1. Enable support for staging database (test PR migrations go to staging and merged go to live)...
 1. Backup database before applying migrations
 1. Application config
 1. Application settings
