@@ -33,9 +33,7 @@ Azure Static Web App + local dev config flow
 
 ## TODO
 
-1. Backup database before applying migrations
-1. Application config
-1. Application settings
+1. Make ASWA staging settings the same as last staging settings and not same as prod
 1. Authentication
 1. Authorization
 1. Linting
