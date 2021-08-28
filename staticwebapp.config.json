@@ -1,0 +1,34 @@
+{
+    "routes": [
+        {
+            "route": "/api/*",
+            "allowedRoles": ["poster"]
+        }
+    ],
+    "responseOverrides": {
+        "400": {
+            "rewrite": "/invalid-invitation-error.html"
+        },
+        "401": {
+            "redirect": "/login",
+            "statusCode": 302
+        },
+        "403": {
+            "rewrite": "/custom-forbidden-page.html"
+        },
+        "404": {
+            "rewrite": "/404.html"
+        }
+    },
+    "auth": {
+        "identityProviders": {
+            "azureActiveDirectory": {
+                "registration": {
+                "openIdIssuer": "https://login.microsoftonline.com/b3579660-8c9b-491e-8e25-7c5f362a7394/v2.0",
+                "clientIdSettingName": "AAD_CLIENT_ID",
+                "clientSecretSettingName": "AAD_CLIENT_SECRET"
+                }
+            }
+        }
+    }
+}
