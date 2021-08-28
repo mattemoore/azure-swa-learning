@@ -34,8 +34,7 @@ Azure Static Web App + local dev config flow
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
-1. Authentication
-1. Authorization
+1. Authentication + Authorization (test auth on API with AAD, test if more than 25 readers can work with custom auth)
 1. Linting
 1. Client-side analytics
 
