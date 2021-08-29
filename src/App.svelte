@@ -1,36 +1,20 @@
 <script>
-	export let name;
-	import { Button, Col, Row } from 'sveltestrap';
+	import Poster from './Poster.svelte';
+	import Nav from './Nav.svelte';
+	import Footer from './Footer.svelte';
+	import { Styles } from 'sveltestrap';
 </script>
-
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+  </head>
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Row>
-		<Col>
-			<Button color="primary" outline>Hello World!!!!aaa</Button>
-		</Col>
-	</Row>
+	<Styles />
+	<Nav />
+	<div class="col-lg-8 mx-auto p-3 py-md-5">
+	<Poster />
+	<Footer />
+	</div>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
 </style>
