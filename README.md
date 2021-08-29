@@ -31,6 +31,20 @@ Azure Static Web App + local dev config flow
 
 1. Values in `local.settings.json` must be pushed or manually entered into Azure Static Web App configuration
 
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "PGUSER": "postgres",
+    "PGHOST": "localhost",
+    "PGDATABASE": "ececonnect",
+    "PGPORT": "5432"
+  }
+}
+```
+
 ## Database
 
 1. Create database called `ececonnect` manually in staging, prod and local dev.
