@@ -31,10 +31,14 @@ Azure Static Web App + local dev config flow
 
 1. Values in `local.settings.json` must be pushed or manually entered into Azure Static Web App configuration
 
+## Database
+
+1. Create database called `ececonnect` manually in staging, prod and local dev.
+
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
-1. Authentication + Authorization (test auth on API with AAD, test if more than 25 readers can work with custom auth)
+1. Research functions appd
 1. Linting
 1. Client-side analytics
 
