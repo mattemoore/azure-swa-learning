@@ -4,7 +4,7 @@ Azure Static Web App + local dev config flow
 
 ## Dev
 
-1. Start dev web server: `npm run start`
+1. Start dev web server: `npm run dev`
 1. Start local db via (in another terminal): `npm run db`
 1. Start dev Azure functions host (in another terminal): `npm run api`
 1. Start Azure Static Web App emulator (in another terminal): `npm run azure:emu`
