@@ -10,13 +10,23 @@
     let isPostButtonDisabled = true;
 
     async function handleSubmit(event) {
-        alert("Post button clicked");
+        //alert("Post button clicked");
+        const response = await fetch("./api/Tweet/", {
+            method: 'POST', 
+            cache: 'no-cache', 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({status: postContentTransformed}) 
+        });
+        let responseText = await response.text();
+        alert(responseText); 
     }
+
     async function transformPost(event) {
         let newHTML = postContent;
         if (reachedTweetLimit(postContent)) {
             newHTML = insert(newHTML, maxTweetLength, "&#128721;");
-            console.log(newHTML);
         }
         postContentTransformed = newHTML;
         isPostValid();
@@ -108,7 +118,6 @@
                 <div
                     id="postPreview"
                     contenteditable="fakse"
-                    disabled="disabled"
                     bind:innerHTML={postContentTransformed}
                     style="min-height:9em; overflow-wrap:break-word"
                 />
