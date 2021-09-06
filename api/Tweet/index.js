@@ -26,18 +26,23 @@ module.exports = async function (context, req) {
         access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
     });
 
-    // TODO: Return tweet id
     try {
         let response = await twitterClient.post('statuses/update', { status: twitterContent });
-        responseMessage = response.entities.urls[0].url;
+        responseMessage = "https://twitter.com/redirect/status/" + response.id_str;
     }
     catch (twitterAPIErrors) {
         statusCode=400;
-        for(const error of twitterAPIErrors) {
-            responseMessage += error.message;
+        if (twitterAPIErrors.length > 0)
+        {
+            for(const err of twitterAPIErrors) {
+                responseMessage += err.message;
+            }
+        }
+        else {
+            responseMessage = twitterAPIErrors
         }
     }
-    
+
     context.res = {
         status: statusCode,
         body: responseMessage
