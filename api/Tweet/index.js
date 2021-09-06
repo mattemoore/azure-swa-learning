@@ -28,7 +28,7 @@ module.exports = async function (context, req) {
 
     // TODO: Return tweet id
     try {
-        let response = await twitterClient.post('statuses/updatefff', { status: twitterContent });
+        let response = await twitterClient.post('statuses/update', { status: twitterContent });
         responseMessage = response.entities.urls[0].url;
     }
     catch (twitterAPIErrors) {
