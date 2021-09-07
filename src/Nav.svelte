@@ -6,11 +6,7 @@
       NavbarBrand,
       Nav,
       NavItem,
-      NavLink,
-      Dropdown,
-      DropdownToggle,
-      DropdownMenu,
-      DropdownItem
+      NavLink
     } from 'sveltestrap';
   
     let isOpen = false;

@@ -4,19 +4,27 @@ let tweetLength = 280;
 // TODO: Put this behind a user role
 // TODO: Combine all posts to all social media platforms into one method?
 // TODO: Eventually these keys will be pulled from user data in database
+// TODO: Put reply url of staging envs in AAD config
 module.exports = async function (context, req) {
+    if (!req.body) {
+        context.res = {
+            status: 400,
+            body: "Malformed request: Body is empty or invalid format."
+        };
+        return
+    }
+
     let postContent = req.body.status;
-    let statusCode = 200;
-    let responseMessage = "";
-        
-    // TODO: Test this
     if (!postContent) {
         context.res = {
             status: 400,
-            body: "Empty post."
+            body: "Status parameter cannot be empty."
         };
         return
     } 
+
+    let statusCode = 200;
+    let responseMessage = "";
         
     let twitterContent = postContent.substring(0, tweetLength);
     let twitterClient = new Twitter({
