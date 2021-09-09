@@ -10,7 +10,6 @@
     let isPostButtonDisabled = true;
 
     async function handleSubmit(event) {
-        //alert("Post button clicked");
         const response = await fetch("./api/Tweet/", {
             method: 'POST', 
             cache: 'no-cache', 
@@ -23,16 +22,28 @@
         alert(responseText); 
     }
 
+    async function searchHashTag() {
+        const response = await fetch("./api/Trends/", {
+            method: 'GET', 
+            cache: 'no-cache', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        let responseText = await response.text();
+        alert(responseText); 
+    }
+
     async function transformPost(event) {
         let newHTML = postContent;
-        if (reachedTweetLimit(postContent)) {
+        if (hasReachedTweetLimit(postContent)) {
             newHTML = insert(newHTML, maxTweetLength, "&#128721;");
         }
         postContentTransformed = newHTML;
         isPostValid();
     }
 
-    function reachedTweetLimit(postContent) {
+    function hasReachedTweetLimit(postContent) {
         let parsedTweet = twttr.parseTweet(postContent);
         return parsedTweet.weightedLength > maxTweetLength;
     }
@@ -40,10 +51,6 @@
     function isPostValid() {
         let isValid = postContent.length > 0;
         isPostButtonDisabled = !isValid;
-    }
-
-    function searchHashTag() {
-        alert("Hastag serach button clicked.");
     }
 
     function cheatCode(callback) {

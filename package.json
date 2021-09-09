@@ -24,6 +24,7 @@
     "azure:emu": "npx @azure/static-web-apps-cli start http://localhost:8080 --api http://localhost:7071"
   },
   "dependencies": {
-    "sveltestrap": "^5.6.1"
+    "sveltestrap": "^5.6.1",
+    "twitter": "^1.7.1"
   }
 }

@@ -52,7 +52,7 @@ Azure Static Web App + local dev config flow
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
-1. Research functions appd
+1. Research functions app for byofunctions support
 1. Linting
 1. Client-side analytics
 
