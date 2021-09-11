@@ -52,6 +52,9 @@ Azure Static Web App + local dev config flow
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
+1. Put reply url of staging envs in AAD config to make auth work in staging
+1. Make user schema that holds social media auth keys
+1. Use user's social media auth keys to make posts
 1. Research functions app for byofunctions support
 1. Linting
 1. Client-side analytics

@@ -1,8 +1,9 @@
 var TwitterClient = require('../twitterClient');
 
-// TODO: Put this behind a user role
-
-// TODO: Put reply url of staging envs in AAD config
+//TODO: media files should not go from client to our API and then to twitter
+//      it would be better if they went from client directly to twitter...
+//      1. client sends to twitter then client sends media_ids to Tweet API call
+//      Should we consider all call to social media apis to be done via the client?s
 module.exports = async function (context, req) {
     let statusCode = 200;
     let responseMessage = "";

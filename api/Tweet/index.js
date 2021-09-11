@@ -1,10 +1,6 @@
-var Twitter = require('twitter');
+var TwitterClient = require('../twitterClient');
 let tweetLength = 280;
 
-// TODO: Put this behind a user role
-// TODO: Combine all posts to all social media platforms into one method?
-// TODO: Eventually these keys will be pulled from user data in database
-// TODO: Put reply url of staging envs in AAD config
 module.exports = async function (context, req) {
     if (!req.body) {
         context.res = {
@@ -27,13 +23,8 @@ module.exports = async function (context, req) {
     let responseMessage = "";
         
     let twitterContent = postContent.substring(0, tweetLength);
-    let twitterClient = new Twitter({
-        consumer_key: process.env.TWITTER_CONSUMER_KEY,
-        consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-        access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-        access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-    });
-
+    let twitterClient = TwitterClient.twitterClient();
+    
     try {
         let response = await twitterClient.post('statuses/update', { status: twitterContent });
         console.log(response);
