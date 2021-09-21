@@ -1,6 +1,8 @@
 # ece-connect-client
 
-Azure Static Web App + local dev config flow
+Learn Azure Static Web App (i.e. Netlify/Jamstack)
+
+Ignore the repo name...started out as ECE Memory Sharer type app but ended up a cross-social-app posting thing.
 
 ## Dev
 
