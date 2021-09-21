@@ -11,27 +11,27 @@
 
     async function handleSubmit(event) {
         const response = await fetch("./api/Tweet/", {
-            method: 'POST', 
-            cache: 'no-cache', 
+            method: "POST",
+            cache: "no-cache",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify({status: postContentTransformed}) 
+            body: JSON.stringify({ status: postContentTransformed }),
         });
         let responseText = await response.text();
-        alert(responseText); 
+        alert(responseText);
     }
 
     async function searchHashTag() {
         const response = await fetch("./api/Trends/", {
-            method: 'GET', 
-            cache: 'no-cache', 
+            method: "GET",
+            cache: "no-cache",
             headers: {
-                'Content-Type': 'application/json'
-            }
+                "Content-Type": "application/json",
+            },
         });
         let responseText = await response.text();
-        alert(responseText); 
+        alert(responseText);
     }
 
     async function transformPost(event) {
@@ -52,6 +52,17 @@
         let isValid = postContent.length > 0;
         isPostButtonDisabled = !isValid;
     }
+
+    function generateTwitterTempToken() {
+        // call API that generates temp request token
+        // unhide login button
+    }
+
+    function logIntoTwitter() {
+        // redirect user to twitter login screen
+        // HOW DO WE catch the redirect back from twitter so we store keys?
+    }
+
 
     function cheatCode(callback) {
         var input = "";
@@ -82,6 +93,20 @@
             Easily create compelling content and post it to all of your social
             media accounts with one click
         </p>
+    </div>
+    <div class="text-center text-lg-start">
+        <h3 class="w-bold lh-1 mb-3">
+            Step 1 - Log into Twitter so we can Tweet on your behalf
+        </h3>
+        <p class="col-lg-10 fs-4">
+            We do not not store your username or password!
+        </p>
+        <button type="button" class="btn btn-primary" on:click={generateTwitterTempToken}
+            >Generate Oauth Token</button
+        >
+        <button type="button" class="btn btn-primary visually-hidden" on:click={logIntoTwitter}
+        >Login to Twitter</button
+    >
     </div>
     <div>
         <form
