@@ -1,8 +1,8 @@
-# ece-connect-client
+# azure-swa-learning
 
-Learn Azure Static Web App (i.e. Netlify/Jamstack)
+Learn Azure Static Web App (i.e. Netlify/Jamstack) + Azure Postgres + Other things
 
-Ignore the repo name...started out as ECE Memory Sharer type app but ended up a cross-social-app posting thing.
+Started out as ECE Memory Sharer type app but ended up a cross-social-app posting thing.
 
 ## Dev
 
