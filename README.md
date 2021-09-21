@@ -1,6 +1,8 @@
-# ece-connect-client
+# azure-swa-learning
 
-Azure Static Web App + local dev config flow
+Learn Azure Static Web App (i.e. Netlify/Jamstack) + Azure Postgres + Other things
+
+Started out as ECE Memory Sharer type app but ended up a cross-social-app posting thing.
 
 ## Dev
 
@@ -26,6 +28,7 @@ Azure Static Web App + local dev config flow
 1. Create new flyway migration file in /db/migrations
 1. Local dev migrations are done during `npm run db`
 1. Live dev migrations are done during deploy in `/home/mattmoore/Code/ece-connect-client/.github/workflows/azure-static-web-apps-thankful-river-02dfee710.yml`
+1. NOTE: Flyway migrations will fail if Azure PG instances are not running, thus code cannot be merged unless PG instances are turned on.
 
 ## Settings
 
@@ -55,7 +58,6 @@ Azure Static Web App + local dev config flow
 1. Put reply url of staging envs in AAD config to make auth work in staging
 1. Make user schema that holds social media auth keys
 1. Use user's social media auth keys to make posts
-1. Research functions app for byofunctions support
 1. Linting
 1. Client-side analytics
 
