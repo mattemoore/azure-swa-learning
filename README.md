@@ -6,7 +6,7 @@ Started out as ECE Memory Sharer type app but ended up a cross-social-app postin
 
 ## Dev
 
-1. Start dev web server: `npm run start`
+1. Start dev web server: `npm run dev`
 1. Start local db via (in another terminal): `npm run db`
 1. Start dev Azure functions host (in another terminal): `npm run api`
 1. Start Azure Static Web App emulator (in another terminal): `npm run azure:emu`
@@ -55,6 +55,9 @@ Started out as ECE Memory Sharer type app but ended up a cross-social-app postin
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
+1. Put reply url of staging envs in AAD config to make auth work in staging
+1. Make user schema that holds social media auth keys
+1. Use user's social media auth keys to make posts
 1. Linting
 1. Client-side analytics
 
