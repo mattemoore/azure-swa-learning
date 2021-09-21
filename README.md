@@ -28,6 +28,7 @@ Started out as ECE Memory Sharer type app but ended up a cross-social-app postin
 1. Create new flyway migration file in /db/migrations
 1. Local dev migrations are done during `npm run db`
 1. Live dev migrations are done during deploy in `/home/mattmoore/Code/ece-connect-client/.github/workflows/azure-static-web-apps-thankful-river-02dfee710.yml`
+1. NOTE: Flyway migrations will fail if Azure PG instances are not running, thus code cannot be merged unless PG instances are turned on.
 
 ## Settings
 
@@ -54,7 +55,6 @@ Started out as ECE Memory Sharer type app but ended up a cross-social-app postin
 ## TODO
 
 1. Make ASWA staging settings the same as last staging settings and not same as prod
-1. Research functions appd
 1. Linting
 1. Client-side analytics
 
